@@ -269,6 +269,18 @@ Shape 上，Dispatcher 从 `M=1` 的 0.618 TFLOPS 提升到 `M=8192` 的 57.611 
 而 `M=128` 起 WMMA Async 明确领先，因此继续保留稳健的 `M<=32` 分发阈值。详见
 `results/rtx4090_analysis.md`。
 
+与 RTX 3060 汇总表相同的四个 Shape，在 RTX 4090 上实测如下（单位：TFLOPS）：
+
+![RTX 4090 FP16 GEMM summary](results/rtx4090_gemm_summary.png)
+
+原始汇总数据为 `results/rtx4090_gemm_summary.csv`，图片可通过
+下面的命令重新生成：
+
+```bash
+python scripts/make_summary_table.py results/rtx4090_gemm_summary.csv \
+  --svg results/rtx4090_gemm_summary.svg
+```
+
 ## RTX 3060 初步结果
 
 环境：RTX 3060 12GB、`sm_86`、CUDA 13.3、Release build。每项执行 20 次 warmup 和
