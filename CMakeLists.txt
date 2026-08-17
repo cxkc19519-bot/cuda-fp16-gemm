@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.22)
 
 if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
     # RTX 3060 = sm_86. Override with -DCMAKE_CUDA_ARCHITECTURES=89 for RTX 4090.

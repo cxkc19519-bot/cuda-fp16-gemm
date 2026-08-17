@@ -27,7 +27,7 @@ CMake 默认生成 `sm_86` 代码。服务器构建时通过参数切换到 `sm_
 
 - 支持 C++17 的主机编译器
 - CUDA Toolkit（包含 cuBLAS）
-- CMake 3.24+
+- CMake 3.22+
 
 Windows 推荐安装 Visual Studio 2022 的“使用 C++ 的桌面开发”组件，并安装 CUDA Toolkit。
 
