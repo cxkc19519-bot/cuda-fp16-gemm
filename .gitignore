@@ -1,0 +1,11 @@
+/build/
+/out/
+/cmake-build-*/
+/.vs/
+/.vscode/
+/.docx-read-render/
+__pycache__/
+*.pyc
+results/*.ncu-rep
+*.user
+*.suo

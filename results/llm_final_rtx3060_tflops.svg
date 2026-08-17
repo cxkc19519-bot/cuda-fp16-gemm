@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+<title>FP16 GEMM on RTX 3060: LLM Shape Comparison</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,sans-serif;fill:#111827}.tick{font-size:13px}.label{font-size:16px}.title{font-size:23px;font-weight:600}.legend{font-size:14px}.grid{stroke:#d1d5db;stroke-width:1}.axis{stroke:#374151;stroke-width:1.2}</style>
+<text class="title" x="95" y="36">FP16 GEMM on RTX 3060: LLM Shape Comparison</text>
+<line class="grid" x1="95" x2="950" y1="620.00" y2="620.00"/>
+<text class="tick" text-anchor="end" x="83" y="625.00">0.0</text>
+<line class="grid" x1="95" x2="950" y1="528.33" y2="528.33"/>
+<text class="tick" text-anchor="end" x="83" y="533.33">4.8</text>
+<line class="grid" x1="95" x2="950" y1="436.67" y2="436.67"/>
+<text class="tick" text-anchor="end" x="83" y="441.67">9.5</text>
+<line class="grid" x1="95" x2="950" y1="345.00" y2="345.00"/>
+<text class="tick" text-anchor="end" x="83" y="350.00">14.3</text>
+<line class="grid" x1="95" x2="950" y1="253.33" y2="253.33"/>
+<text class="tick" text-anchor="end" x="83" y="258.33">19.1</text>
+<line class="grid" x1="95" x2="950" y1="161.67" y2="161.67"/>
+<text class="tick" text-anchor="end" x="83" y="166.67">23.9</text>
+<line class="grid" x1="95" x2="950" y1="70.00" y2="70.00"/>
+<text class="tick" text-anchor="end" x="83" y="75.00">28.6</text>
+<line class="grid" x1="95.00" x2="95.00" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="95.00" y="648">1</text>
+<line class="grid" x1="160.77" x2="160.77" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="160.77" y="648">2</text>
+<line class="grid" x1="226.54" x2="226.54" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="226.54" y="648">4</text>
+<line class="grid" x1="292.31" x2="292.31" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="292.31" y="648">8</text>
+<line class="grid" x1="358.08" x2="358.08" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="358.08" y="648">16</text>
+<line class="grid" x1="423.85" x2="423.85" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="423.85" y="648">32</text>
+<line class="grid" x1="489.62" x2="489.62" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="489.62" y="648">64</text>
+<line class="grid" x1="555.38" x2="555.38" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="555.38" y="648">128</text>
+<line class="grid" x1="686.92" x2="686.92" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="686.92" y="648">512</text>
+<line class="grid" x1="752.69" x2="752.69" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="752.69" y="648">1024</text>
+<line class="grid" x1="818.46" x2="818.46" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="818.46" y="648">2048</text>
+<line class="grid" x1="884.23" x2="884.23" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="884.23" y="648">4096</text>
+<line class="grid" x1="950.00" x2="950.00" y1="70" y2="620"/>
+<text class="tick" text-anchor="middle" x="950.00" y="648">8192</text>
+<rect x="95" y="70" width="855" height="550" fill="none" class="axis"/>
+<text class="label" text-anchor="middle" x="522.5" y="678">M (N=K=4096)</text>
+<text class="label" text-anchor="middle" transform="translate(24 345.0) rotate(-90)">Throughput (TFLOPS)</text>
+<polyline points="95.00,619.20 160.77,618.46 226.54,616.59 292.31,613.20 358.08,606.81 423.85,592.91 489.62,566.92 555.38,554.30 686.92,545.58 752.69,542.98 818.46,543.00 884.23,543.27 950.00,543.27" fill="none" stroke="#4c78a8" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="619.20" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=1, 0.042</title></circle>
+<circle cx="160.77" cy="618.46" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=2, 0.080</title></circle>
+<circle cx="226.54" cy="616.59" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=4, 0.177</title></circle>
+<circle cx="292.31" cy="613.20" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=8, 0.354</title></circle>
+<circle cx="358.08" cy="606.81" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=16, 0.687</title></circle>
+<circle cx="423.85" cy="592.91" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=32, 1.410</title></circle>
+<circle cx="489.62" cy="566.92" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=64, 2.763</title></circle>
+<circle cx="555.38" cy="554.30" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=128, 3.420</title></circle>
+<circle cx="686.92" cy="545.58" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=512, 3.874</title></circle>
+<circle cx="752.69" cy="542.98" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=1024, 4.009</title></circle>
+<circle cx="818.46" cy="543.00" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=2048, 4.009</title></circle>
+<circle cx="884.23" cy="543.27" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=4096, 3.994</title></circle>
+<circle cx="950.00" cy="543.27" r="2.8" fill="#4c78a8"><title>CUDA Core RegVec: M=8192, 3.995</title></circle>
+<line x1="978" x2="1006" y1="78" y2="78" stroke="#4c78a8" stroke-width="2.0"/>
+<text class="legend" x="1016" y="83">CUDA Core RegVec</text>
+<polyline points="95.00,618.62 160.77,617.25 226.54,614.63 292.31,608.66 358.08,597.53 423.85,576.45 489.62,535.57 555.38,530.09 686.92,520.50 752.69,516.06 818.46,516.45 884.23,515.50 950.00,518.10" fill="none" stroke="#f58518" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="618.62" r="2.8" fill="#f58518"><title>WMMA Block: M=1, 0.072</title></circle>
+<circle cx="160.77" cy="617.25" r="2.8" fill="#f58518"><title>WMMA Block: M=2, 0.143</title></circle>
+<circle cx="226.54" cy="614.63" r="2.8" fill="#f58518"><title>WMMA Block: M=4, 0.279</title></circle>
+<circle cx="292.31" cy="608.66" r="2.8" fill="#f58518"><title>WMMA Block: M=8, 0.590</title></circle>
+<circle cx="358.08" cy="597.53" r="2.8" fill="#f58518"><title>WMMA Block: M=16, 1.170</title></circle>
+<circle cx="423.85" cy="576.45" r="2.8" fill="#f58518"><title>WMMA Block: M=32, 2.267</title></circle>
+<circle cx="489.62" cy="535.57" r="2.8" fill="#f58518"><title>WMMA Block: M=64, 4.396</title></circle>
+<circle cx="555.38" cy="530.09" r="2.8" fill="#f58518"><title>WMMA Block: M=128, 4.681</title></circle>
+<circle cx="686.92" cy="520.50" r="2.8" fill="#f58518"><title>WMMA Block: M=512, 5.180</title></circle>
+<circle cx="752.69" cy="516.06" r="2.8" fill="#f58518"><title>WMMA Block: M=1024, 5.411</title></circle>
+<circle cx="818.46" cy="516.45" r="2.8" fill="#f58518"><title>WMMA Block: M=2048, 5.391</title></circle>
+<circle cx="884.23" cy="515.50" r="2.8" fill="#f58518"><title>WMMA Block: M=4096, 5.440</title></circle>
+<circle cx="950.00" cy="518.10" r="2.8" fill="#f58518"><title>WMMA Block: M=8192, 5.305</title></circle>
+<line x1="978" x2="1006" y1="112" y2="112" stroke="#f58518" stroke-width="2.0"/>
+<text class="legend" x="1016" y="117">WMMA Block</text>
+<polyline points="95.00,615.91 160.77,611.83 226.54,602.97 292.31,586.21 358.08,552.67 423.85,490.25 489.62,486.42 555.38,494.07 686.92,477.84 752.69,480.42 818.46,477.93 884.23,477.16 950.00,479.35" fill="none" stroke="#54a24b" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="615.91" r="2.8" fill="#54a24b"><title>PTX MMA: M=1, 0.213</title></circle>
+<circle cx="160.77" cy="611.83" r="2.8" fill="#54a24b"><title>PTX MMA: M=2, 0.425</title></circle>
+<circle cx="226.54" cy="602.97" r="2.8" fill="#54a24b"><title>PTX MMA: M=4, 0.887</title></circle>
+<circle cx="292.31" cy="586.21" r="2.8" fill="#54a24b"><title>PTX MMA: M=8, 1.759</title></circle>
+<circle cx="358.08" cy="552.67" r="2.8" fill="#54a24b"><title>PTX MMA: M=16, 3.505</title></circle>
+<circle cx="423.85" cy="490.25" r="2.8" fill="#54a24b"><title>PTX MMA: M=32, 6.755</title></circle>
+<circle cx="489.62" cy="486.42" r="2.8" fill="#54a24b"><title>PTX MMA: M=64, 6.954</title></circle>
+<circle cx="555.38" cy="494.07" r="2.8" fill="#54a24b"><title>PTX MMA: M=128, 6.556</title></circle>
+<circle cx="686.92" cy="477.84" r="2.8" fill="#54a24b"><title>PTX MMA: M=512, 7.401</title></circle>
+<circle cx="752.69" cy="480.42" r="2.8" fill="#54a24b"><title>PTX MMA: M=1024, 7.267</title></circle>
+<circle cx="818.46" cy="477.93" r="2.8" fill="#54a24b"><title>PTX MMA: M=2048, 7.397</title></circle>
+<circle cx="884.23" cy="477.16" r="2.8" fill="#54a24b"><title>PTX MMA: M=4096, 7.436</title></circle>
+<circle cx="950.00" cy="479.35" r="2.8" fill="#54a24b"><title>PTX MMA: M=8192, 7.322</title></circle>
+<line x1="978" x2="1006" y1="146" y2="146" stroke="#54a24b" stroke-width="2.0"/>
+<text class="legend" x="1016" y="151">PTX MMA</text>
+<polyline points="95.00,617.91 160.77,615.82 226.54,611.20 292.31,602.44 358.08,584.28 423.85,553.86 489.62,485.43 555.38,454.85 686.92,442.52 752.69,439.93 818.46,439.45 884.23,440.95 950.00,440.99" fill="none" stroke="#e45756" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="617.91" r="2.8" fill="#e45756"><title>WMMA Async: M=1, 0.109</title></circle>
+<circle cx="160.77" cy="615.82" r="2.8" fill="#e45756"><title>WMMA Async: M=2, 0.218</title></circle>
+<circle cx="226.54" cy="611.20" r="2.8" fill="#e45756"><title>WMMA Async: M=4, 0.458</title></circle>
+<circle cx="292.31" cy="602.44" r="2.8" fill="#e45756"><title>WMMA Async: M=8, 0.914</title></circle>
+<circle cx="358.08" cy="584.28" r="2.8" fill="#e45756"><title>WMMA Async: M=16, 1.860</title></circle>
+<circle cx="423.85" cy="553.86" r="2.8" fill="#e45756"><title>WMMA Async: M=32, 3.443</title></circle>
+<circle cx="489.62" cy="485.43" r="2.8" fill="#e45756"><title>WMMA Async: M=64, 7.006</title></circle>
+<circle cx="555.38" cy="454.85" r="2.8" fill="#e45756"><title>WMMA Async: M=128, 8.598</title></circle>
+<circle cx="686.92" cy="442.52" r="2.8" fill="#e45756"><title>WMMA Async: M=512, 9.240</title></circle>
+<circle cx="752.69" cy="439.93" r="2.8" fill="#e45756"><title>WMMA Async: M=1024, 9.375</title></circle>
+<circle cx="818.46" cy="439.45" r="2.8" fill="#e45756"><title>WMMA Async: M=2048, 9.400</title></circle>
+<circle cx="884.23" cy="440.95" r="2.8" fill="#e45756"><title>WMMA Async: M=4096, 9.322</title></circle>
+<circle cx="950.00" cy="440.99" r="2.8" fill="#e45756"><title>WMMA Async: M=8192, 9.319</title></circle>
+<line x1="978" x2="1006" y1="180" y2="180" stroke="#e45756" stroke-width="2.0"/>
+<text class="legend" x="1016" y="185">WMMA Async</text>
+<polyline points="95.00,615.92 160.77,611.86 226.54,603.00 292.31,586.20 358.08,552.59 423.85,490.03 489.62,485.39 555.38,456.13 686.92,440.65 752.69,441.63 818.46,440.06 884.23,440.35 950.00,442.06" fill="none" stroke="#b279a2" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="615.92" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=1, 0.213</title></circle>
+<circle cx="160.77" cy="611.86" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=2, 0.424</title></circle>
+<circle cx="226.54" cy="603.00" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=4, 0.885</title></circle>
+<circle cx="292.31" cy="586.20" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=8, 1.760</title></circle>
+<circle cx="358.08" cy="552.59" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=16, 3.509</title></circle>
+<circle cx="423.85" cy="490.03" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=32, 6.766</title></circle>
+<circle cx="489.62" cy="485.39" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=64, 7.008</title></circle>
+<circle cx="555.38" cy="456.13" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=128, 8.531</title></circle>
+<circle cx="686.92" cy="440.65" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=512, 9.337</title></circle>
+<circle cx="752.69" cy="441.63" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=1024, 9.286</title></circle>
+<circle cx="818.46" cy="440.06" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=2048, 9.368</title></circle>
+<circle cx="884.23" cy="440.35" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=4096, 9.353</title></circle>
+<circle cx="950.00" cy="442.06" r="4.2" fill="#b279a2"><title>Shape-Aware Dispatch: M=8192, 9.264</title></circle>
+<line x1="978" x2="1006" y1="214" y2="214" stroke="#b279a2" stroke-width="3.5"/>
+<text class="legend" x="1016" y="219">Shape-Aware Dispatch</text>
+<polyline points="95.00,615.23 160.77,609.88 226.54,599.21 292.31,583.65 358.08,546.42 423.85,491.90 489.62,321.68 555.38,231.67 686.92,132.34 752.69,159.22 818.46,128.90 884.23,113.04 950.00,110.74" fill="none" stroke="#111827" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="95.00" cy="615.23" r="4.2" fill="#111827"><title>cuBLAS: M=1, 0.248</title></circle>
+<circle cx="160.77" cy="609.88" r="4.2" fill="#111827"><title>cuBLAS: M=2, 0.527</title></circle>
+<circle cx="226.54" cy="599.21" r="4.2" fill="#111827"><title>cuBLAS: M=4, 1.082</title></circle>
+<circle cx="292.31" cy="583.65" r="4.2" fill="#111827"><title>cuBLAS: M=8, 1.892</title></circle>
+<circle cx="358.08" cy="546.42" r="4.2" fill="#111827"><title>cuBLAS: M=16, 3.831</title></circle>
+<circle cx="423.85" cy="491.90" r="4.2" fill="#111827"><title>cuBLAS: M=32, 6.669</title></circle>
+<circle cx="489.62" cy="321.68" r="4.2" fill="#111827"><title>cuBLAS: M=64, 15.531</title></circle>
+<circle cx="555.38" cy="231.67" r="4.2" fill="#111827"><title>cuBLAS: M=128, 20.217</title></circle>
+<circle cx="686.92" cy="132.34" r="4.2" fill="#111827"><title>cuBLAS: M=512, 25.388</title></circle>
+<circle cx="752.69" cy="159.22" r="4.2" fill="#111827"><title>cuBLAS: M=1024, 23.989</title></circle>
+<circle cx="818.46" cy="128.90" r="4.2" fill="#111827"><title>cuBLAS: M=2048, 25.567</title></circle>
+<circle cx="884.23" cy="113.04" r="4.2" fill="#111827"><title>cuBLAS: M=4096, 26.393</title></circle>
+<circle cx="950.00" cy="110.74" r="4.2" fill="#111827"><title>cuBLAS: M=8192, 26.513</title></circle>
+<line x1="978" x2="1006" y1="248" y2="248" stroke="#111827" stroke-width="2.0"/>
+<text class="legend" x="1016" y="253">cuBLAS</text>
+</svg>
