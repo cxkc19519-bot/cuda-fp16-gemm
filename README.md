@@ -282,7 +282,7 @@ Shape 上，Dispatcher 从 `M=1` 的 0.618 TFLOPS 提升到 `M=8192` 的 57.611 
 
 原始汇总数据为 `results/rtx4090_gemm_summary.csv`。
 
-## RTX 3060 初步结果
+#### RTX 3060 初步结果
 
 环境：RTX 3060 12GB、`sm_86`、CUDA 13.3、Release build。每项执行 20 次 warmup 和
 100 次正式测量。以下数据是本机实测值，不代表其他 GPU 或温度/频率状态下的结果。
