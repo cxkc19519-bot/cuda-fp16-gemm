@@ -269,6 +269,8 @@ Shape 上，Dispatcher 从 `M=1` 的 0.618 TFLOPS 提升到 `M=8192` 的 57.611 
 而 `M=128` 起 WMMA Async 明确领先，因此继续保留稳健的 `M<=32` 分发阈值。详见
 `results/rtx4090_analysis.md`。
 
+#### RTX 4090 FP16 GEMM 性能汇总
+
 与 RTX 3060 汇总表相同的四个 Shape，在 RTX 4090 上实测如下（单位：TFLOPS）：
 
 | Shape | RegVec | WMMA Block | WMMA Async | MMA PTX | cuBLAS | Best/cuBLAS |
@@ -278,15 +280,7 @@ Shape 上，Dispatcher 从 `M=1` 的 0.618 TFLOPS 提升到 `M=8192` 的 57.611 
 | `1024x1024x1024` | 21.098 | 27.951 | 51.641 | 34.190 | 105.607 | 48.9% |
 | `257x511x1025` | 3.868 | 4.933 | 4.932 | 4.933 | 24.098 | 20.5% |
 
-![RTX 4090 FP16 GEMM summary](results/rtx4090_gemm_summary.png)
-
-原始汇总数据为 `results/rtx4090_gemm_summary.csv`，图片可通过
-下面的命令重新生成：
-
-```bash
-python scripts/make_summary_table.py results/rtx4090_gemm_summary.csv \
-  --svg results/rtx4090_gemm_summary.svg
-```
+原始汇总数据为 `results/rtx4090_gemm_summary.csv`。
 
 ## RTX 3060 初步结果
 
