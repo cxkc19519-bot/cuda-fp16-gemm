@@ -49,7 +49,9 @@ if(MSVC)
 else()
     target_compile_options(cuda_gemm PRIVATE
         $<$<COMPILE_LANGUAGE:CXX>:-Wall;-Wextra;-Wpedantic>
-        $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-Wall,-Wextra,-Wpedantic>
+        # -Wpedantic diagnoses NVCC-generated #line directives and floods Linux
+        # build logs; keep useful host warnings without flagging generated code.
+        $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-Wall,-Wextra>
     )
 endif()
 

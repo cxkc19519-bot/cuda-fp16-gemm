@@ -128,9 +128,9 @@ void launch_gemm_mma_ptx(const __half* a,
                          int k,
                          cudaStream_t stream = nullptr);
 
-// RTX 3060 (sm_86) policy calibrated with K=N=4096 LLM decode/prefill
-// benchmarks. Keeping selection separate makes the policy testable and easy
-// to retune for sm_89 without changing the kernel implementations.
+// Policy calibrated on RTX 3060 (sm_86) and RTX 4090 (sm_89) with K=N=4096
+// LLM decode/prefill benchmarks. Keeping selection separate makes the policy
+// testable without coupling it to the kernel implementations.
 GemmKernel select_gemm_kernel(int m, int n, int k);
 
 void launch_gemm_dispatch(const __half* a,

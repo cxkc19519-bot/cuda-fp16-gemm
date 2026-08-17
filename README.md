@@ -260,6 +260,15 @@ M <= 32 且 N、K 均为 8 的倍数 -> mma_ptx
 85.6%/91.6%/101.5%；Prefill 区域稳定在约 9.3 TFLOPS。完整结果与局限分析见
 `results/final_benchmark_analysis.md`。
 
+### V9 RTX 4090 / sm_89 Validation
+
+服务器使用 CUDA 12.4、CMake 3.22 和两张 RTX 4090。项目以
+`-DCMAKE_CUDA_ARCHITECTURES=89` 完成 Release 构建，全部正确性测试通过。完整 LLM
+Shape 上，Dispatcher 从 `M=1` 的 0.618 TFLOPS 提升到 `M=8192` 的 57.611 TFLOPS；
+`M=16` 达到 cuBLAS 的 97.6%。`M=64` 的 PTX/WMMA Async 1000 次复测仅相差约 0.7%，
+而 `M=128` 起 WMMA Async 明确领先，因此继续保留稳健的 `M<=32` 分发阈值。详见
+`results/rtx4090_analysis.md`。
+
 ## RTX 3060 初步结果
 
 环境：RTX 3060 12GB、`sm_86`、CUDA 13.3、Release build。每项执行 20 次 warmup 和
