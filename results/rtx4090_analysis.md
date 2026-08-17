@@ -29,6 +29,17 @@ M 值。
 | 4096 | 2458.491 | 55.904 | 174.538 | 32.0% |
 | 8192 | 4771.287 | 57.611 | 175.884 | 32.8% |
 
+## 与 RTX 3060 汇总表对应的 Shape
+
+为便于简历和 README 直接横向比较，额外使用相同的四个 Shape、20 warmup、100 次
+正式测量生成汇总图：
+
+![RTX 4090 FP16 GEMM summary](rtx4090_gemm_summary.png)
+
+注意 `128x128x128` 的自研 PTX Kernel 为 1.206 TFLOPS，高于本轮 cuBLAS 的
+0.785 TFLOPS；这是极小 Shape 下启动、内部策略和并行度差异造成的单点结果，不代表
+大矩阵吞吐超过 cuBLAS。
+
 ## 分发阈值复核
 
 首轮 `M=64` 中，PTX MMA 为 31.325 TFLOPS，WMMA Async 为 30.954 TFLOPS。随后使用
